@@ -14,16 +14,18 @@ class CreateProductsDetail extends Migration
     public function up()
     {
         Schema::create('products_detail', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('idPro');
+            $table->increments('id',true);
+            $table->integer('idPro')->unsigned();
             $table->string('promotion');
             $table->string('accessories');
-            $table->boolean('outofstock');
+            $table->boolean('outOfStock');
             $table->integer('idImg');
             $table->integer('order');
             $table->boolean('status');
             $table->timestamps();
+            $table->foreign('idPro')->references('id')->on('products');
         });
+
     }
 
     /**

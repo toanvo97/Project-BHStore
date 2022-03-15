@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Sections extends Migration
+class CreateSections extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class Sections extends Migration
      */
     public function up()
     {
-        //
         Schema::create('sections', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id',true);
             $table->string('content');
             $table->string('subContent');
             $table->boolean('status');
@@ -31,7 +30,6 @@ class Sections extends Migration
      */
     public function down()
     {
-        //
         Schema::dropIfExists('sections');
     }
 }

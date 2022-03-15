@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePicture extends Migration
+class CreateAbouts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreatePicture extends Migration
      */
     public function up()
     {
-        Schema::create('pictures', function (Blueprint $table) {
+        Schema::create('about', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idSection');
-            $table->string('name');
-            $table->integer('order');
-            $table->string('meta');
+            $table->integer('idSection')->unsigned();
+            $table->string('descriptionDetail');
             $table->boolean('status');
             $table->timestamps();
         });
 
-        Schema::table('pictures', function (Blueprint $table) {
+        Schema::table('about', function(Blueprint $table){
             $table->foreign('idSection')->references('id')->on('sections');
         });
     }
@@ -35,6 +33,6 @@ class CreatePicture extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pictures');
+        Schema::dropIfExists('about');
     }
 }

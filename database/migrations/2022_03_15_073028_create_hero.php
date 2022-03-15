@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNervousSection extends Migration
+class CreateHero extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateNervousSection extends Migration
      */
     public function up()
     {
-        Schema::create('nervous', function (Blueprint $table) {
+        Schema::create('hero', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idSection');
-            $table->string('icon');
-            $table->string('boxTitle');
-            $table->string('boxContent');
+            $table->integer('idSection')->unsigned();
+            $table->string('image');
             $table->boolean('status');
-            $table->integer('order');
             $table->timestamps();
         });
 
-        Schema::table('nervous', function (Blueprint $table) {
+        Schema::table('hero', function(Blueprint $table){
             $table->foreign('idSection')->references('id')->on('sections');
         });
     }
@@ -36,6 +33,6 @@ class CreateNervousSection extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nervous');
+        Schema::dropIfExists('hero');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFooter extends Migration
+class CreateContact extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,20 @@ class CreateFooter extends Migration
      */
     public function up()
     {
-        Schema::create('footer', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idSection')->unsigned();
             $table->string('name',250);
+            $table->string('email',250);
             $table->string('subTitle',250);
-            $table->string('address');
-            $table->integer('phone');
-            $table->string('email');
-            $table->string('hotline');
+            $table->string('description');
             $table->boolean('status');
             $table->integer('order');
             $table->timestamps();
+        });
+
+        Schema::table('contact', function(Blueprint $table){
+            $table->foreign('idSection')->references('id')->on('sections');
         });
     }
 
@@ -34,6 +37,6 @@ class CreateFooter extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('footer');
+        Schema::dropIfExists('contact');
     }
 }

@@ -14,17 +14,14 @@ class CreateCategoryProduct extends Migration
     public function up()
     {
         Schema::create('category_product', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('idMainCate');
+            $table->increments('id',true);
+            $table->integer('idMainCate')->unsigned();
             $table->string('name');
             $table->integer('order');
             $table->boolean('status');
             $table->string('meta');
             $table->string('link');
             $table->timestamps();
-        });
-
-        Schema::table('category_product', function (Blueprint $table){
             $table->foreign('idMainCate')->references('id')->on('category');
         });
     }

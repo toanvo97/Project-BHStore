@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactSection extends Migration
+class CreateTeam extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,19 @@ class CreateContactSection extends Migration
      */
     public function up()
     {
-        Schema::create('contact', function (Blueprint $table) {
+        Schema::create('team', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idSection');
-            $table->string('name',250);
-            $table->string('email',250);
-            $table->string('subTitle',250);
-            $table->string('description');
+            $table->integer('idSection')->unsigned();
+            $table->string('name');
+            $table->string('position');
+            $table->string('subDesciption');
+            $table->string('image');
             $table->boolean('status');
             $table->integer('order');
             $table->timestamps();
         });
 
-        Schema::table('contact', function(Blueprint $table){
+        Schema::table('team', function(Blueprint $table){
             $table->foreign('idSection')->references('id')->on('sections');
         });
     }
@@ -37,6 +37,6 @@ class CreateContactSection extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact');
+        Schema::dropIfExists('team');
     }
 }

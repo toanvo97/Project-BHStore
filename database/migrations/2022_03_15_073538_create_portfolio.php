@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamSection extends Migration
+class CreatePortfolio extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,18 @@ class CreateTeamSection extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('portfolio', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idSection');
-            $table->string('name');
-            $table->string('position');
-            $table->string('subDesciption');
-            $table->string('image');
+            $table->integer('idSection')->unsigned();
+            $table->string('portfolio_menu');
+            $table->integer('idCateMenu')->unsigned();
             $table->boolean('status');
-            $table->integer('order');
             $table->timestamps();
         });
 
-        Schema::table('team', function(Blueprint $table){
+        Schema::table('portfolio', function (Blueprint $table){
             $table->foreign('idSection')->references('id')->on('sections');
+            $table->foreign('idCateMenu')->references('id')->on('category');
         });
     }
 
@@ -37,6 +35,6 @@ class CreateTeamSection extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team_section');
+        Schema::dropIfExists('portfolio');
     }
 }

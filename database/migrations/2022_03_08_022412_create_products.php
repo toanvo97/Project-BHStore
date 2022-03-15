@@ -14,7 +14,7 @@ class CreateProducts extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id',true);
             $table->integer('idCatePro')->unsigned();
             $table->string('name',250);
             $table->integer('idImg');
@@ -22,6 +22,7 @@ class CreateProducts extends Migration
             $table->boolean('status');
             $table->string('link');
             $table->timestamps();
+            $table->foreign('idCatePro')->references('id')->on('category_product');
         });
     }
 

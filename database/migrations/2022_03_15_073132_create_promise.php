@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePromiseSection extends Migration
+class CreatePromise extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreatePromiseSection extends Migration
     {
         Schema::create('promise', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idSection');
+            $table->integer('idSection')->unsigned();
             $table->string('boxTitle');
             $table->string('boxContent');
             $table->boolean('status');

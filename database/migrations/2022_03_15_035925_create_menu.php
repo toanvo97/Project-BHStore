@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class SubMenu extends Migration
+class CreateMenu extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,14 @@ class SubMenu extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('subMenu', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('idMenu')->unsigned();
+        Schema::create('menu', function (Blueprint $table) {
+            $table->increments('id',true);
             $table->string('name',255);
             $table->string('link',255);
             $table->string('meta',255);
-            $table->boolean('status');
             $table->integer('order')->unsigned();
+            $table->boolean('status');
             $table->timestamps();
-        });
-
-        Schema::table('subMenu', function(Blueprint $table){
-            $table->foreign('idMenu')->references('id')->on('menu');
         });
     }
 
@@ -37,7 +31,6 @@ class SubMenu extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('subMenu');
+        Schema::dropIfExists('menu');
     }
 }
