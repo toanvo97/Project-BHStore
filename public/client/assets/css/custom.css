@@ -1,0 +1,270 @@
+.hidden{
+    display: none;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    bottom: 135px;
+    position: fixed;
+}
+.wrapper .button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    /* float: left; */
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+    margin-bottom: 10px;
+}
+.wrapper .button:nth-child(1),
+.wrapper .button:nth-child(2),
+.wrapper .button:nth-child(3),
+.wrapper .button:nth-child(4),
+.wrapper .button:nth-child(5){
+    color: #fff;
+}
+.wrapper .button:nth-child(1){
+    background: #4267B2;
+}
+.wrapper .button:nth-child(2){
+    background:#DE8E00;
+}
+.wrapper .button:nth-child(3){
+    background: #259dfd;
+}
+.wrapper .button:nth-child(4){
+    background: #1dad4e;
+}
+.wrapper .button:nth-child(5){
+    background: red;
+}
+.wrapper .button:nth-child(1):hover,
+.wrapper .button:nth-child(2):hover,
+.wrapper .button:nth-child(3):hover,
+.wrapper .button:nth-child(4):hover,
+.wrapper .button:nth-child(5):hover{
+    width: fit-content;
+    border: #fff solid 1px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover{
+    background: #279cfe;
+}
+.wrapper .button:nth-child(2):hover{
+    background: #e9c364;
+}
+.wrapper .button:nth-child(3):hover{
+    background: #55b1fd;
+}
+.wrapper .button:nth-child(4):hover{
+    background: #4ad177;
+}
+.wrapper .button:nth-child(5):hover{
+    background: rgb(245, 66, 66);
+}
+.wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    text-align: center;
+}
+.wrapper .button:nth-child(1):hover .icon{
+    background: #4267B2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+    background: #DE8E00;
+}
+.wrapper .button:nth-child(3):hover .icon{
+    background: #279cfe;
+}
+.wrapper .button:nth-child(4):hover .icon{
+    background: #1dad4e;
+}
+.wrapper .button:nth-child(5):hover .icon{
+    background: red
+}
+.wrapper .button .icon i{
+    color: #fff;
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button .icon .zalo{
+    max-width: 50px;
+    height: 40px;
+}
+.wrapper .button .icon .map{
+    max-width: 100%;
+    height: auto;
+}
+.wrapper .button:hover .icon i{
+    color: #fff;
+}
+.wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    padding-right: 15px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span, 
+.wrapper .button:nth-child(2) span,
+.wrapper .button:nth-child(3) span,
+.wrapper .button:nth-child(4) span,
+.wrapper .button:nth-child(5) span
+{
+    color: #fff;
+}
+
+.lienhe_ngay {
+    bottom: 85px;
+    width: fit-content;
+    position: fixed;
+    cursor: pointer;
+    padding: 15px;
+    background-image: linear-gradient(to right, #279cfe, #01c2ce);
+    border-radius: 30px;
+  }
+  
+  .lienhe_ngay p {
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 600;
+  }
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 20px;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+.modal .modal-content h2{
+    text-align: center;
+    color: #DAA520;
+}
+.modal .modal-content{
+    background: url("../img/bg_box.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+.modal .php-email-form button[type=submit] {
+    background: #DAA520;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  .modal .php-email-form button[type=submit]:hover {
+    background: #f0c049;
+  }
+  .modal .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  .modal .php-email-form .error-message br + br {
+    margin-top: 25px;
+  }
+  .modal .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  .modal .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  .modal .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  .modal .php-email-form input, .modal .php-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .modal .php-email-form input {
+    height: 44px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
+    -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .3);
+  }
+  .modal .php-email-form textarea {
+    padding: 10px 12px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
+    -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .3);
+  }
+
+ /* Custom fotorama */
+ .fotorama__nav--thumbs {
+    display: flex;
+    flex-direction: row;
+}
