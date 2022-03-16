@@ -23,7 +23,7 @@ class CreateBhUsers extends Migration
             $table->string('phone',30);
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('passWord');
+            $table->string('password');
             $table->boolean('status');
             $table->integer('order');
             $table->rememberToken();

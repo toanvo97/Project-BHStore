@@ -255,7 +255,7 @@
 							</a>
 						</li>
 						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
+							<a href="{{route('logout')}}" class="dropdown-menu-link">
 								<div>
 									<i class="fas fa-sign-out-alt"></i>
 								</div>
